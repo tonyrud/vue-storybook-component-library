@@ -1,9 +1,13 @@
-$color-primary: #55c57a;
-$color-primary-light: #7ed56f;
+$color-white: #fff;
+$color-black: #000;
+$color-primary: #156da1;
+$color-primary-light: mix($color-white, $color-primary);
 $color-primary-dark: #28b485;
 
+$color-secondary: #ffb900;
 $color-secondary-light: #ffb900;
 $color-secondary-dark: #ff7730;
+
 $color-tertiary-light: #2998ff;
 $color-tertiary-dark: #5643fa;
 
@@ -14,8 +18,7 @@ $color-grey-dark: #777;
 $color-grey-dark-2: #999;
 $color-grey-dark-3: #333;
 
-$color-white: #fff;
-$color-black: #000;
+$text-dark: #333;
 
 // font
 $default-font-size: 1.6rem;

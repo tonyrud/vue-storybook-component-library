@@ -1,9 +1,12 @@
 import Vue from 'vue'
 
 import { storiesOf } from '@storybook/vue'
+import { action } from '@storybook/addon-actions'
+import { linkTo } from '@storybook/addon-links'
+import { withNotes } from '@storybook/addon-notes'
 import Centered from '@storybook/addon-centered'
 import MyInput from './forms/FormControlInput.vue'
-
+import formInputMD from './forms/Forms.md'
 import {
   withKnobs,
   text,
@@ -22,26 +25,20 @@ const inputData = {
   label: 'Email Label',
 }
 
-storiesOf('Inputs', module)
-  .addDecorator(Centered)
-  // .addDecorator(story => <div style="text-align:center">{story()}</div>)
-  // Works if Vue.component is called in the config.js in .storybook
-  .add('Default', () => ({
-    // components: { MyInput },
-    template: `<my-input :input={}></my-input>`,
-  }))
+storiesOf('Forms', module)
+  .addDecorator(withKnobs)
+  .add(
+    'Inputs',
+    withNotes(formInputMD)(() => ({
+      // components: { MyInput },
+
+      template: `
+    <div>
+      <my-input :input={}></my-input>
+    </div>
+    `,
+    })),
+  )
   .add('Disabled', () => ({
     template: `<my-input :disabled=true :input={}></my-input>`,
   }))
-
-storiesOf('Addon Knobs', module)
-  .addDecorator(withKnobs)
-  .add('Simple', () => {
-    const name = text('Name', 'John Doe')
-    const age = number('Age', 44)
-    const content = `I am ${name} and I'm ${age} years old.`
-
-    return {
-      template: `<div>${content}</div>`,
-    }
-  })

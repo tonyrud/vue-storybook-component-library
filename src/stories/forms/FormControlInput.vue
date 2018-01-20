@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import './../../styles/utils/_variables.scss';
+@import './../../styles/utils/_module.scss';
 .form {
   &__group {
     color: $color-grey-dark-3;
@@ -36,6 +36,10 @@ export default {
     &:not(:last-child) {
       margin-bottom: 2rem;
     }
+  }
+
+  &__control {
+    display: flex;
   }
 
   &__input {
@@ -46,7 +50,7 @@ export default {
     font-family: inherit;
     background-color: rgba($color-grey-dark, 0.1);
     border: none;
-    border-bottom: 3px solid transparent;
+    border-bottom: 1px solid transparent;
     width: 100%;
     display: block;
     transition: all 0.15s;
