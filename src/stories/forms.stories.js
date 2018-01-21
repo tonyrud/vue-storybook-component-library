@@ -6,7 +6,6 @@ import { linkTo } from '@storybook/addon-links'
 import { withNotes } from '@storybook/addon-notes'
 import Centered from '@storybook/addon-centered'
 import MyInput from './forms/FormControlInput.vue'
-import formInputMD from './forms/Forms.md'
 import {
   withKnobs,
   text,
@@ -19,26 +18,53 @@ import {
   button,
 } from '@storybook/addon-knobs/vue'
 
-const inputData = {
-  type: 'email',
-  placeholder: 'Email',
-  label: 'Email Label',
+import FormControlRadio from './forms/FormControlRadio.vue'
+
+const inputWrapperStyles = {
+  width: '400px',
+  padding: '1em',
 }
 
-storiesOf('Forms', module)
+storiesOf('Form Elements', module)
   .addDecorator(withKnobs)
+  .addDecorator(() => ({
+    // Decorated with `story` component
+    template: `<div :style="styles"><story/></div>`,
+    data() {
+      return {
+        styles: inputWrapperStyles,
+      }
+    },
+  }))
   .add(
-    'Inputs',
-    withNotes(formInputMD)(() => ({
-      // components: { MyInput },
-
+    'Input',
+    withNotes('Some notes on this Input')(() => {
+      const label = text('Label', '')
+      const disabled = boolean('Disabled', false)
+      return {
+        template: `
+      <div>
+        <my-input :disabled=${disabled} :input="{placeholder: 'Email', type: 'email', label: '${label}'}"></my-input>
+      </div>
+      `,
+      }
+    }),
+  )
+  .add('Radio', () => {
+    const items = array('Items', ['Guitars', 'Mics', 'Drums'])
+    return {
+      components: { FormControlRadio },
       template: `
     <div>
-      <my-input :input={}></my-input>
+      <FormControlRadio :items="items"/>
     </div>
     `,
-    })),
-  )
-  .add('Disabled', () => ({
-    template: `<my-input :disabled=true :input={}></my-input>`,
-  }))
+      data() {
+        return {
+          items: (() => {
+            return items.map(item => ({ label: item }))
+          })(),
+        }
+      },
+    }
+  })

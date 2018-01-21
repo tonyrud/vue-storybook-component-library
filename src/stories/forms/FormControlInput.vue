@@ -1,15 +1,13 @@
 <template>
   <div class="form__group">
     <label v-if="input.label" class="form__label">{{input.label}}</label>
-    <div class="form__control">
       <input
         class="form__input"
+        :class="{disabled}"
         :type="input.type"
         :placeholder="input.placeholder"
         :disabled="disabled"
         >
-    </div>
-
   </div>
 </template>
 
@@ -33,13 +31,10 @@ export default {
   &__group {
     color: $color-grey-dark-3;
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;
     &:not(:last-child) {
       margin-bottom: 2rem;
     }
-  }
-
-  &__control {
-    display: flex;
   }
 
   &__input {
@@ -62,19 +57,27 @@ export default {
     }
 
     &:focus:invalid {
-      border-bottom: 2px solid $color-secondary-dark;
+      border-bottom: 2px solid $color-error;
+    }
+    &:invalid {
+      border-bottom: 2px solid $color-error-light;
     }
 
     &::-webkit-input-placeholder {
       color: $color-grey-dark-2;
     }
+
+    &.disabled {
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
   }
 
   &__label {
+    color: inherit;
     font-size: 1.2rem;
     font-weight: 700;
-    margin-left: 2rem;
-    margin-top: 0.7rem;
+    margin: 0 0 0.3rem 0.2rem;
     display: block;
     transition: all 0.1s;
   }

@@ -4,13 +4,13 @@ Here is some documentation on how to use a form input component, written in mark
 
 ## Component Useage
 
-1. Import component where needed
+### Import component where needed
 
 ```javascript
 import HeadingSecondary from 'path/to/directory'
 ```
 
-2. Register component in your Vue instance
+### Register component in your Vue instance
 
 ```javascript
 components: {
@@ -18,7 +18,7 @@ components: {
 }
 ```
 
-3. Add component name into your template
+### Add component name into your template
 
 ```html
 <heading-secondary>Secondary Heading</heading-secondary>
@@ -27,6 +27,6 @@ components: {
 ## Component Properties
 
 | Prop Name |  Type   | Default | Description                            |
-| --------- | :-----: | ------: | -------------------------------------- |
-| :upper    | Boolean |   false | Adds uppercase to text-transform style |
-| :gradient | Boolean |   false | Adds a gradient to the header          |
+| --------- | :-----: | :-----: | -------------------------------------- |
+| :upper    | Boolean |  false  | Adds uppercase to text-transform style |
+| :gradient | Boolean |  false  | Adds a gradient to the header          |
