@@ -33,8 +33,8 @@ storiesOf('Headings', module)
   })
   .add('Secondary', () => {
     const name = text('Heading Text', 'Secondary Heading')
-    const gradient = boolean('Gradient', false)
-    const upper = boolean('Uppercase', false)
+    const gradient = boolean('Gradient', true)
+    const upper = boolean('Uppercase', true)
     return {
       components: { HeadingSecondary },
       template: `

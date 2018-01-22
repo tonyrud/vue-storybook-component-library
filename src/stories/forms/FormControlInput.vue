@@ -5,7 +5,7 @@
         class="form__input"
         :class="{disabled}"
         :type="input.type"
-        :placeholder="input.placeholder"
+        :placeholder="placeholder"
         :disabled="disabled"
         >
   </div>
@@ -22,6 +22,14 @@ export default {
       type: Boolean,
     },
   },
+  computed: {
+    placeholder() {
+      if (!this.input.label) {
+        return this.input.placeholder
+      }
+      return ''
+    }
+  }
 }
 </script>
 
