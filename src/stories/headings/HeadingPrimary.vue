@@ -18,7 +18,7 @@ export default {
 
 <style lang="scss">
 @import './../../styles/utils/_module.scss';
-@import './../../styles/base/_typography.scss';
+// @import './../../styles/base/_typography.scss';
 
 .product-suggest {
   margin-top: 2rem;
