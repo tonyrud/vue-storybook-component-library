@@ -5,7 +5,7 @@
       rgba($color-primary-light, 0.8),
       rgba($color-primary-dark, 0.8)
     ),
-    url(../assets/img/hero-small.jpg);
+    url(#{$path--assets}/img/hero-small.jpg);
   background-size: cover;
   background-position: top;
   position: relative;
@@ -26,7 +26,7 @@
         rgba($color-primary-light, 0.8),
         rgba($color-primary-dark, 0.8)
       ),
-      url(../assets/img/hero.jpg);
+      url(#{$path--assets}/img/hero.jpg);
   }
 
   @include respond(phone) {

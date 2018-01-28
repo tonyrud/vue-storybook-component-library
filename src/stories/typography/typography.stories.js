@@ -38,3 +38,10 @@ storiesOf('Typography Elements', module)
       template: `<heading-primary>${name}</heading-primary>`,
     }
   })
+  .add('Heading Secondary', () => {
+    const name = text('Heading Text', 'Secondary Heading')
+    return {
+      components: { HeadingSecondary },
+      template: `<heading-secondary>${name}</heading-secondary>`,
+    }
+  })
