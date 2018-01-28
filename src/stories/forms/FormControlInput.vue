@@ -11,7 +11,10 @@
   </div>
 </template>
 
+
 <script>
+// fake commit for rebase
+
 export default {
   props: {
     input: {
@@ -28,8 +31,8 @@ export default {
         return this.input.placeholder
       }
       return ''
-    }
-  }
+    },
+  },
 }
 </script>
 
