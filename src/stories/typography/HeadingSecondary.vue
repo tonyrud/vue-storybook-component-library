@@ -22,6 +22,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import './../../styles/utils/_module.scss';
-@import './../../styles/base/_typography.scss';
+// @import './../../styles/main.scss';
 </style>

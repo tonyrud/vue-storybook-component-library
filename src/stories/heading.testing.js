@@ -1,5 +1,7 @@
 // import Vue from 'vue'
 
+// import './../styles/main.scss'
+
 import { storiesOf } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 import { linkTo } from '@storybook/addon-links'
