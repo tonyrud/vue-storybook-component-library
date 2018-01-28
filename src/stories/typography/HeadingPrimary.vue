@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="scss">
-// @import './../../styles/utils/_module.scss';
+@import './../../styles/utils/_module.scss';
 @import './../../styles/main.scss';
 .heading-primary {
   color: inherit;

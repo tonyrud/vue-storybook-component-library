@@ -22,5 +22,34 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// @import './../../styles/main.scss';
+@import './../../styles/utils/_module.scss';
+@import './../../styles/main.scss';
+.heading-secondary {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: $color-text-dark;
+  display: inline-block;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s;
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
+
+  &.gradient {
+    background-image: linear-gradient(
+      to right,
+      $color-primary-light,
+      $color-primary-dark
+    );
+    color: transparent;
+    -webkit-background-clip: text;
+  }
+  &.upper {
+    text-transform: uppercase;
+  }
+}
 </style>
