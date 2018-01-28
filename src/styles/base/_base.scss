@@ -32,7 +32,7 @@ body {
   font-weight: 400;
   /*font-size: 16px;*/
   line-height: 1.7;
-  color: $color-text-dark;
+  color: $color-text-light;
   // padding: 3rem;
   box-sizing: border-box;
   @include respond(tab-port) {

@@ -2,6 +2,8 @@ import Vue from 'vue'
 import { storiesOf } from '@storybook/vue'
 import HeadingPrimary from './HeadingPrimary.vue'
 import HeadingSecondary from './HeadingSecondary.vue'
+import HeadingTertiary from './HeadingTertiary.vue'
+import Paragraph from './Paragraph.vue'
 
 import {
   withKnobs,
@@ -43,5 +45,24 @@ storiesOf('Typography Elements', module)
     return {
       components: { HeadingSecondary },
       template: `<heading-secondary>${name}</heading-secondary>`,
+    }
+  })
+  .add('Heading Tertiary/Paragraph', () => {
+    const name = text('Heading Text', 'Tertiary Heading')
+    return {
+      components: { HeadingTertiary, Paragraph },
+      template: `
+      <div>
+      <heading-tertiary>${name}</heading-tertiary>
+      <paragraph></paragraph>
+      </div>
+      `,
+    }
+  })
+  .add('Paragraph', () => {
+    // const name = text('Heading Text', 'Tertiary Heading')
+    return {
+      components: { Paragraph },
+      template: `<paragraph></paragraph>`,
     }
   })

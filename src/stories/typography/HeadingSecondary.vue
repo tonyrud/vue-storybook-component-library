@@ -1,6 +1,6 @@
 <template>
   <div class="u-margin-bottom-xsmall" >
-      <h2 class="heading-secondary" :class="{ gradient: gradient, upper: upper }">
+      <h2 class="heading-secondary gradient" :class="{ gradient: gradient, upper: upper }">
         <slot>Please add header content</slot>
       </h2>
   </div>
@@ -22,10 +22,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import './../../styles/utils/_module.scss';
+// @import './../../styles/utils/_module.scss';
 @import './../../styles/main.scss';
 .heading-secondary {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   text-transform: uppercase;
   font-weight: 700;
   color: $color-text-dark;

@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import './../../styles/utils/_module.scss';
+// @import './../../styles/utils/_module.scss';
 @import './../../styles/main.scss';
 .heading-primary {
   color: inherit;
@@ -33,6 +33,7 @@ export default {
     font-size: 6rem;
     font-weight: 400;
     letter-spacing: 3.5rem;
+    line-height: initial;
 
     @include respond(phone) {
       letter-spacing: 1rem;
