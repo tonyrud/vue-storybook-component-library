@@ -63,6 +63,10 @@ storiesOf('Typography Elements', module)
     // const name = text('Heading Text', 'Tertiary Heading')
     return {
       components: { Paragraph },
-      template: `<paragraph></paragraph>`,
+      template: `
+        <paragraph>
+          ipsum dolor, sit amet consectetur adipisicing elit. Delectus, ipsa, debitis impedit quam iure magnam voluptates unde quia
+      ullam quae id! Perferendis sunt cum veritatis molestias adipisci nulla consequuntur neque?
+        </paragraph>`,
     }
   })

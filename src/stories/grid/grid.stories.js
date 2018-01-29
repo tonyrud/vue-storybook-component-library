@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/vue'
-import Card from './Card.vue'
+import Grid1of4 from './Grid1-4.vue'
 
 import {
   withKnobs,
@@ -14,11 +14,11 @@ import {
 } from '@storybook/addon-knobs/vue'
 
 const inputWrapperStyles = {
-  width: '500px',
+  width: '100%',
   padding: '3em',
 }
 
-storiesOf('Cards', module)
+storiesOf('Responsive Grid', module)
   .addDecorator(() => ({
     // Decorated with `story` component
     template: `<div :style="styles"><story/></div>`,
@@ -29,14 +29,11 @@ storiesOf('Cards', module)
     },
   }))
   .addDecorator(withKnobs)
-  .add('Basic Card', () => {
-    const cardTitle = text('Card Title', 'The Sea Explorer')
-    const hover = boolean('Rotatable Card', false)
+  .add('1 of 4', () => {
     return {
-      components: { Card },
+      components: { Grid1of4 },
       template: `
-      <card :hover="${hover}">
-        <span slot="heading">${cardTitle}</span>
-      </card>`,
+      <grid1of5><grid1of4>
+      `,
     }
   })
