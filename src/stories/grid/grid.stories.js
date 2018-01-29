@@ -1,5 +1,8 @@
 import { storiesOf } from '@storybook/vue'
-import Grid1of4 from './Grid1-4.vue'
+import Grid1of4 from './Grid1of4.vue'
+import Grid1of2 from './Grid1of2.vue'
+import Grid1of3 from './Grid1of3.vue'
+import Grid2of3 from './Grid2of3.vue'
 
 import {
   withKnobs,
@@ -29,11 +32,16 @@ storiesOf('Responsive Grid', module)
     },
   }))
   .addDecorator(withKnobs)
-  .add('1 of 4', () => {
+  .add('Layouts', () => {
     return {
-      components: { Grid1of4 },
+      components: { Grid1of2, Grid1of4, Grid1of3, Grid2of3 },
       template: `
-      <grid1of5><grid1of4>
+      <div>
+        <grid1of4></grid1of4>
+        <grid1of3></grid1of3>
+        <grid1of2></grid1of2>
+        <grid2of3></grid2of3>
+      </div>
       `,
     }
   })

@@ -1,5 +1,5 @@
 <template>
-  <h3 class="heading-tertiary u-margin-bottom-small">You're going to fall in love with nature</h3>
+  <h3 class="heading-tertiary u-margin-bottom-small"><slot></slot></h3>
 </template>
 
 <script>

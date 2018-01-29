@@ -48,13 +48,13 @@ storiesOf('Typography Elements', module)
     }
   })
   .add('Heading Tertiary/Paragraph', () => {
-    const name = text('Heading Text', 'Tertiary Heading')
+    const name = text('Tertiary Text', 'Tertiary Heading')
     return {
       components: { HeadingTertiary, Paragraph },
       template: `
       <div>
-      <heading-tertiary>${name}</heading-tertiary>
-      <paragraph></paragraph>
+        <heading-tertiary>${name}</heading-tertiary>
+        <paragraph></paragraph>
       </div>
       `,
     }
