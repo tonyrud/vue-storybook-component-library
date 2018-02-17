@@ -212,6 +212,7 @@ export default {
       height: auto;
       position: relative;
       box-shadow: none;
+      border-top-right-radius: 0;
       &--back {
         transform: rotateY(0);
         clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);

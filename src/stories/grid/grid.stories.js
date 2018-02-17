@@ -18,7 +18,7 @@ import {
   button,
 } from '@storybook/addon-knobs/vue'
 
-const inputWrapperStyles = {
+const wrapperStyles = {
   width: '100%',
   padding: '3em',
 }
@@ -29,12 +29,29 @@ storiesOf('Responsive Grid', module)
     template: `<div :style="styles"><story/></div>`,
     data() {
       return {
-        styles: inputWrapperStyles,
+        styles: wrapperStyles,
       }
     },
   }))
   .addDecorator(withKnobs)
-  .add('Layouts', () => {
+  .add('CSS Grid', () => {
+    const rowGap = number('Row Gap', 40)
+    const colGap = number('Column Gap', 20)
+    const min = number('Minimum component width', 300)
+    return {
+      components: { Card, GridComponent },
+      template: `
+      <GridComponent :min="${min}" :gap="{row: ${rowGap}, column: ${colGap}}">
+        <Card/>
+        <Card/>
+        <Card/>
+        <Card/>
+        <Card/>
+      </GridComponent>
+      `,
+    }
+  })
+  .add('Responsive Float Grid', () => {
     return {
       components: { Grid1of2, Grid1of4, Grid1of3, Grid2of3 },
       template: `
@@ -44,20 +61,6 @@ storiesOf('Responsive Grid', module)
         <grid1of2></grid1of2>
         <grid2of3></grid2of3>
       </div>
-      `,
-    }
-  })
-  .add('Grid Component', () => {
-    return {
-      components: { Card, GridComponent },
-      template: `
-      <GridComponent :gap="{row: 15, column: 150}">
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-      </GridComponent>
       `,
     }
   })
