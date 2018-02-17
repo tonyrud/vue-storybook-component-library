@@ -6,7 +6,7 @@
         </div>
         <h4 class="card__heading">
             <span class="card__heading-span card__heading-span-1">
-              <slot name="heading"></slot>
+              <slot name="heading">Add a heading slot</slot>
             </span>
         </h4>
         <div class="card__details">
@@ -36,7 +36,7 @@ export default {
   props: {
     hover: {
       type: Boolean,
-      required: true,
+      default: false,
     },
   },
 }
