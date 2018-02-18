@@ -35,8 +35,7 @@ storiesOf('Cards', module)
     return {
       components: { Card },
       template: `
-      <card :hover="${hover}">
-        <span slot="heading">${cardTitle}</span>
-      </card>`,
+      <card :hover="${hover}" heading="${cardTitle}" />
+      `,
     }
   })
